@@ -47,10 +47,10 @@
                 
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Sign Up</a>
+                        <a class="nav-link" href="#" data-toggle="modal" data-target="#signUpModal">Sign Up</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Log In</a>
+                        <a class="nav-link" href="#" data-toggle="modal" data-target="#loginModal">Log In</a>
                     </li>
                 </ul> 
             </div>
@@ -62,8 +62,8 @@
         <div class="container text-center">
             <h1 class="display-3">Prepare for Success</h1>
             <p class="lead">Create lists of interview questions to prepare you for your dream job.</p>
-            <button class="btn btn-lg btn-light sign-up">Sign Up</button>
-            <small >Already have an account? <a href="#">Log in</a></small>
+            <button class="btn btn-lg btn-light sign-up" data-toggle="modal" data-target="#signUpModal">Sign Up</button>
+            <small >Already have an account? <a href="#" data-toggle="modal" data-target="#loginModal">Log in</a></small>
         </div>
     </div>
     <!-- end of jumbotron  -->
@@ -125,11 +125,79 @@
         </div>
     </div>
 
+    <!-- footer  -->
     <footer>
         <div class="container">
             <p>All rights reservered 2017&copy;</p>
         </div>
     </footer>
+    <!-- end of footer  -->
+
+
+    <!-- Sign Up Modal -->
+    <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalLabel">Sign Up</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Confirm Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    </div>                    
+                    </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-dark">Sign Up</button>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalLabel">Log in</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    </div>                  
+                    </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-dark">Log In</button>
+            </div>
+            </div>
+        </div>
+    </div>
+
 
   </body>
 </html>

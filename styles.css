@@ -38,7 +38,7 @@
     top: 0;
     left: 0;
     padding: 17em 0;
-    background: linear-gradient( rgba(33, 37, 41, 0.6), rgba(245, 245, 245, 0.4)), url("./public/interview.jpg") no-repeat center;
+    background: linear-gradient( rgba(33, 37, 41, 0.9), rgba(245, 245, 245, 0.4)), url("./public/interview.jpg") no-repeat center;
      -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
