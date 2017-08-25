@@ -165,6 +165,8 @@ div .item-links {
     padding: 1em 2em;
     color: white;
     text-align: center;
+    margin: 1em 0 1em -1em;
+    border-radius: 10px;
 }
 
 .side-link-block {
@@ -213,7 +215,6 @@ div .item-links {
     text-align: center;
 }
 
-
 .recommended-search {
     padding-top: 4em;
     font-weight: 300;
@@ -256,6 +257,33 @@ div .item-links {
     -o-background-size: cover;
     background-size: cover;
 }
+
+
+/* ===========================  */
+/* ADD QUESTION PAGE  */
+/* ===========================  */
+
+.create-list {
+    background: linear-gradient( rgba(33, 37, 41, 0.9), rgba(245, 245, 245, 0.4)), url("./public/addquestion.jpg") no-repeat center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: white;
+    padding-bottom: 5em;
+}
+
+.pending-questions {
+    min-height: 15em;
+}
+
+.pending-questions h5 {
+    text-align: center;
+    padding-top: 5em;
+    color: silver;
+}
+
+
 
 
 
