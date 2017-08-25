@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>PrepXP | Prepare for Interviews</title>
+    
+    <!-- bootstrap required  -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    
+    <!-- custom css  -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- fonts  -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+ </head>
+  <body>
+
+    <!-- navbar  -->
+        <nav class="navbar navbar-expand-lg navbar-light" id="navbar-loggedin">
+            <a class="navbar-brand" href="#">PrepXP</a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav  ml-md-auto center-links">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Create</a>
+                    </li>
+                    <li class="nav-item">
+                        <span class="nav-link" href="#">|</span>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Search</a>
+                    </li>
+                    <li class="nav-item">
+                        <span class="nav-link" href="#">|</span>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Blog</a>
+                    </li>
+                </ul>
+                
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-toggle="modal" data-target="#signUpModal">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <span class="nav-link" href="#">|</span>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-toggle="modal" data-target="#loginModal">Logout</a>
+                    </li>
+                </ul> 
+            </div>
+        </nav>
+    <!-- end of navbar  -->
+
+    <!-- main content  -->
+    <div class="container-fluid">
+        <div class="row">
+            <!-- display lists  -->
+            <div class="col-lg-9 left-panel">
+                <h1 class="welcome-message">Welcome, Bob!</h1>
+                <div class="lists">
+                    <div class="list-item row">
+                        <div class="col-sm-8">
+                            <h3>HR Manager</h3>
+                            <p class="question-number">20 questions</p>
+                        </div>
+                        <div class="col-sm-4 item-links">
+                            <p class="text-right"><a href="#">Edit</a></p>
+                            <p class="text-right"><a href="#">Delete</a></p>
+                        </div>
+                    </div>
+                    <!-- end of list item  -->
+
+                    <div class="list-item row">
+                        <div class="col-sm-8">
+                            <h3>JavaScript Developer</h3>
+                            <p class="question-number">33 questions</p>
+                        </div>
+                        <div class="col-sm-4 item-links">
+                            <p class="text-right"><a href="#">Edit</a></p>
+                            <p class="text-right"><a href="#">Delete</a></p>
+                        </div>
+                    </div>
+                    <!-- end of list item  -->
+
+
+
+
+                </div>
+                <!-- end of lists section  -->
+            </div>
+            <!-- end of column  -->
+
+
+            <!-- sidebar links  -->
+            <div class="col-lg-3 side-links">
+                <div class="row">
+                    <div class="col-sm-12 side-link-block">
+                        <h4>Create</h4>
+                        <p>Create a new list of interview questions by clicking the button below</p>
+                        <button class="btn btn-outline-light">Create List</button>
+                    </div>
+                    <div class="col-sm-12 side-link-block">
+                        <h4>Search</h4>
+                        <p>Search through hundreds of interview question lists and land your dream job.</p>
+                        <button class="btn btn-outline-light">Search Lists</button>
+                    </div>
+                    <div class="col-sm-12 side-link-block">
+                        <h4>Blog</h4>
+                        <p>Read artiles from some of the leading experts in hiring and land your dream job.</p>
+                        <button class="btn btn-outline-light">Read Blog</button>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+    <!-- footer  -->
+    <footer>
+        <div class="container">
+            <p>All rights reservered 2017&copy;</p>
+        </div>
+    </footer>
+    <!-- end of footer  -->
+
+  </body>
+</html>
