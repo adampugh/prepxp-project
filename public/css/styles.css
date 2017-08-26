@@ -1,0 +1,390 @@
+* {
+    box-sizing: border-box;
+}
+
+h1,
+h3,
+h4,
+h5 {
+    font-weight: 300;
+}
+
+a:focus {
+    color: silver;
+}
+
+/* NAVBAR STYLES  */
+
+.navbar-light
+.navbar-brand {
+    font-family: 'Gloria Hallelujah', cursive;
+    color: white;
+    font-size: 3em;
+}
+
+.navbar-light {
+    background-color: rgba(0,0,0,0);
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: rgba(225, 225, 225, 0.9);
+    padding-right: 2em;
+}
+
+.navbar-light:hover .navbar-nav:hover .nav-link:hover {
+    color: white;
+}
+
+.navbar {
+    padding: 1em 2em;
+    z-index: 1;
+}
+
+.center-links {
+    padding-left: 6em;
+}
+
+#navbar-loggedin {
+    padding: 0;
+    background: linear-gradient(#202020, rgb(33, 37, 41));
+}
+
+#navbar-loggedin .navbar-brand {
+    padding-left: 1em;
+}
+
+#navbar-loggedin .center-links {
+    padding-left: 1em;
+}
+
+.navbar-light .navbar-nav .nav-link:focus {
+    color: silver;
+}
+
+
+
+
+/* JUMBOTRON SECTION STYLES  */
+
+.jumbotron {
+    width: 100%;
+    height: 20em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 17em 0;
+    background: linear-gradient( rgba(33, 37, 41, 0.9), rgba(245, 245, 245, 0.4)), url("/img/interview.jpg") no-repeat center;
+     -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+     background-size: cover;  
+     color: white;
+}
+
+ .sign-up {
+    margin-top: 1em;
+} 
+
+.jumbotron small {
+    display: block;
+}
+
+
+/* FEATURES SECTION  */
+
+.features {
+    margin-top: 30em;
+}
+
+.feature-section {
+    margin-top: 5em;
+}
+
+
+/* CONTACT SECTION  */
+
+#contact {
+    margin-top: 4em;
+    padding: 3em 0;
+    background: #212529;
+    color: white;
+}
+
+.contact-form {
+    padding-top: 1em;
+}
+
+/* FOOTER  */
+
+footer {
+    background: #202020;
+    color: white;
+    padding: 1em 0;
+    text-align: center;
+}
+
+.footer {
+    display: relative;
+}
+
+/* MODAL STYLES  */
+
+.modal-header h4 {
+    margin: 0 auto;
+}
+
+/* ===============================  */
+/* PROFILE PAGE  */
+/* ===============================  */
+
+
+/* LISTS SECTION  */
+
+.left-panel {
+    padding: 0 5em 0 5em;
+}
+
+.welcome-message {
+    margin: 1em 0;
+    color: rgb(33, 37, 41);
+}
+
+.list-item {
+    background: whitesmoke;
+    padding: .5em 1em 0em 1em;
+    border-radius: 10px;
+    margin-bottom: 1em;
+}
+
+.question-number {
+    color: silver;
+}
+
+.item-links p {
+    display: inline;
+    padding-left: .5em;
+    padding-bottom: 0;
+}
+
+div .item-links {
+    text-align: right;
+    padding: .5em 1em;
+}
+
+/* SIDE LINKS  */
+
+.side-links {
+    background: linear-gradient( rgba(33, 37, 41, 0.9), rgba(245, 245, 245, 0.4)), url("/img/interview2.jpg") no-repeat center;
+     -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+     background-size: cover;
+    padding: 1em 2em;
+    color: white;
+    text-align: center;
+    margin: 1em 0 1em -1em;
+    border-radius: 10px;
+}
+
+.side-link-block {
+    background: rgba(33, 37, 41, 0.6);
+    border-radius: 10px;
+    padding: 1em 0;
+    margin: 1em 0;
+}
+
+.side-link-block p {
+    font-size: .9em;
+}
+
+.side-link-block .btn-outline-light:hover {
+    color: rgba(33, 37, 41, 0.6);
+}
+
+
+/* =======================  */
+/* SEARCH PAGE  */
+/* =======================  */
+
+.search-content {
+    background: linear-gradient( rgba(33, 37, 41, 0.9), rgba(245, 245, 245, 0.4)), url("/img/interview3.jpg") no-repeat center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: white;
+}
+
+.search {
+    margin-top: 6em;
+    padding: 3em;
+}
+
+.search input {
+    border: none;
+}
+
+.recommended {
+    margin-top: 5em;
+    margin-bottom: 5em;
+    background: white;
+    padding-top: 5em;
+    text-align: center;
+}
+
+.recommended-search {
+    padding-top: 4em;
+    font-weight: 300;
+    color: white;
+    background: black;
+    border-radius: 10px;
+    height: 10em;
+    width: 6em;
+    margin: 0 1em 0 1em;
+}
+
+.box-hr {
+    background: linear-gradient( rgba(33, 37, 41, 0.9), rgba(245, 245, 245, 0.4)), url("/img/box1.jpg") no-repeat center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.box-teaching {
+    background: linear-gradient( rgba(33, 37, 41, 0.9), rgba(245, 245, 245, 0.4)), url("/img/box2.jpg") no-repeat center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.box-admin {
+    background: linear-gradient( rgba(33, 37, 41, 0.9), rgba(245, 245, 245, 0.4)), url("/img/box3.jpg") no-repeat center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.box-sales {
+    background: linear-gradient( rgba(33, 37, 41, 0.9), rgba(245, 245, 245, 0.4)), url("/img/box4.jpg") no-repeat center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+
+/* ===========================  */
+/* ADD QUESTION PAGE  */
+/* ===========================  */
+
+.create-list {
+    background: linear-gradient( rgba(33, 37, 41, 0.9), rgba(245, 245, 245, 0.4)), url("/img/addquestion.jpg") no-repeat center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: white;
+    padding-bottom: 5em;
+}
+
+.pending-questions {
+    min-height: 15em;
+}
+
+.pending-questions h5 {
+    text-align: center;
+    padding-top: 5em;
+    color: darkgray;
+}
+
+
+
+
+
+
+/* MEDIA QUERIES  */
+
+/* mobile */
+@media only screen and (max-width : 767px) {
+
+    .jumbotron {
+        padding: 7em 0 25em 0;
+    }
+
+    .navbar {
+        padding: 0.5em 1em;
+    }   
+}
+
+
+/* tablet */
+@media only screen and (max-width : 992px) {
+
+    .navbar {
+        padding: 0.5em 1em;
+    }
+
+    .navbar-light
+    .navbar-brand {
+        font-family: 'Gloria Hallelujah', cursive;
+        color: rgba(185, 185, 185, 0.9);
+        font-size: 3em;
+    }
+
+    .nav-item {
+        border-bottom: .2px solid rgba(205, 205, 205, 0.2);
+    }
+
+    .last-nav-item {
+        border-bottom: none;
+    }
+
+    #navbar-loggedin {
+        padding: 0 1em;
+    }
+    
+    #navbar-loggedin .center-links {
+        padding: 0;
+    }
+
+    #navbar-loggedout .center-links {
+        padding: 0;
+    }
+
+    .navbar-light .navbar-nav .nav-link {
+        text-align: center;
+        padding: 2em;
+    }
+    .navbar-light:hover .navbar-nav:hover .nav-link:hover {
+        color: darkgray;
+    }
+
+    #navbar-loggedin {
+        color: white;
+    }
+
+    #navbar-loggedout .navbar-nav .nav-link {
+        color: darkgrey;
+    }
+
+    #navbar-loggedout .navbar-nav .nav-link:hover {
+        color: black;
+    }
+
+    .nav-item span {
+        display: none;
+    }
+
+
+    .jumbotron {
+        position: relative;
+    }
+
+    .features {
+        margin-top: 1em;
+    }
+    
+}

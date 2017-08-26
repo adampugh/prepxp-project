@@ -1,0 +1,53 @@
+html
+  include header.pug
+  body
+    // navbar
+    nav#navbar-loggedin.navbar.navbar-expand-lg.navbar-light
+      a.navbar-brand(href='#') PrepXP
+      button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      #navbarSupportedContent.collapse.navbar-collapse
+        ul.navbar-nav.ml-md-auto.center-links
+          li.nav-item
+            a.nav-link(href='#') Create
+          li.nav-item
+            span.nav-link(href='#') |
+          li.nav-item
+            a.nav-link(href='#') Search
+          li.nav-item
+            span.nav-link(href='#') |
+          li.nav-item
+            a.nav-link(href='#') Blog
+        ul.navbar-nav.ml-auto
+          li.nav-item
+            a.nav-link(href='#', data-toggle='modal', data-target='#signUpModal') Profile
+          li.nav-item
+            span.nav-link(href='#') |
+          li.nav-item.last-nav-item
+            a.nav-link(href='#', data-toggle='modal', data-target='#loginModal') Logout
+    // end of navbar
+    // main content
+    .container-fluid.search-content
+      .row
+        .col-lg-6.mx-auto.search.side-link-block
+          h1 Search
+          p Search for the latest lists to help you prepare for you job
+          .input-group
+            input.form-control(type='text', placeholder='Search for...', aria-label='Search for...')
+            span.input-group-btn
+              button.btn.btn-outline-light(type='button') Search
+      // end of search box
+      .recommended.row
+        .col-lg-2.ml-auto.recommended-search.box-hr
+          h3 HR
+        .col-lg-2.recommended-search.box-teaching
+          h3 Teaching
+        .col-lg-2.recommended-search.box-admin
+          h3 Admin
+        .col-lg-2.mr-auto.recommended-search.box-sales
+          h3 Sales
+    // footer
+    footer.footer
+      .container
+        p All rights reservered 2017©
+    // end of footer

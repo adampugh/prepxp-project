@@ -1,0 +1,77 @@
+html
+  include header.pug
+  body
+    // navbar
+    nav#navbar-loggedin.navbar.navbar-expand-lg.navbar-light
+      a.navbar-brand(href='#') PrepXP
+      button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      #navbarSupportedContent.collapse.navbar-collapse
+        ul.navbar-nav.ml-md-auto.center-links
+          li.nav-item
+            a.nav-link(href='#') Create
+          li.nav-item
+            span.nav-link(href='#') |
+          li.nav-item
+            a.nav-link(href='#') Search
+          li.nav-item
+            span.nav-link(href='#') |
+          li.nav-item
+            a.nav-link(href='#') Blog
+        ul.navbar-nav.ml-auto
+          li.nav-item
+            a.nav-link(href='#', data-toggle='modal', data-target='#signUpModal') Profile
+          li.nav-item
+            span.nav-link(href='#') |
+          li.nav-item.last-nav-item
+            a.nav-link(href='#', data-toggle='modal', data-target='#loginModal') Logout
+    // end of navbar
+    // main content
+    .container-fluid
+      .row
+        // display lists
+        .col-lg-9.left-panel
+          h1.welcome-message Welcome, Bob!
+          .lists
+            .list-item.row
+              .col-sm-8
+                h3 HR Manager
+                p.question-number 20 questions
+              .col-sm-4.item-links
+                p.text-right
+                  a(href='#') Edit
+                p.text-right
+                  a(href='#') Delete
+            // end of list item
+            .list-item.row
+              .col-sm-8
+                h3 JavaScript Developer
+                p.question-number 33 questions
+              .col-sm-4.item-links
+                p.text-right
+                  a(href='#') Edit
+                p.text-right
+                  a(href='#') Delete
+            // end of list item
+          // end of lists section
+        // end of column
+        // sidebar links
+        .col-lg-3.side-links
+          .row
+            .col-sm-12.side-link-block
+              h4 Create
+              p Create a new list of interview questions by clicking the button below
+              button.btn.btn-outline-light Create List
+            .col-sm-12.side-link-block
+              h4 Search
+              p Search through hundreds of interview question lists and land your dream job.
+              button.btn.btn-outline-light Search Lists
+            .col-sm-12.side-link-block
+              h4 Blog
+              p Read artiles from some of the leading experts in hiring and land your dream job.
+              button.btn.btn-outline-light Read Blog
+    // footer
+    footer
+      .container
+        p All rights reservered 2017©
+    // end of footer

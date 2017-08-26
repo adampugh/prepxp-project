@@ -1,0 +1,122 @@
+
+
+html
+  include header.pug 
+  body
+    // navbar
+    nav#navbar-loggedout.navbar.navbar-expand-lg.navbar-light.menu
+      a.navbar-brand(href='#') PrepXP
+      button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      #navbarSupportedContent.collapse.navbar-collapse
+        ul.navbar-nav.ml-md-auto.center-links
+          li.nav-item
+            a.nav-link(href='#') Home
+          li.nav-item
+            span.nav-link(href='#') |
+          li.nav-item
+            a.nav-link(href='#') Features
+          li.nav-item
+            span.nav-link(href='#') |
+          li.nav-item
+            a.nav-link(href='#') Contact
+        ul.navbar-nav.ml-auto
+          li.nav-item
+            a.nav-link(href='#', data-toggle='modal', data-target='#signUpModal') Sign Up
+          li.nav-item
+            span.nav-link(href='#') |
+          li.nav-item.last-nav-item
+            a.nav-link(href='#', data-toggle='modal', data-target='#loginModal') Log In
+    // end of navbar
+    // jumbotron
+    .jumbotron.jumbotron-fluid
+      .container.text-center
+        h1.display-3 Prepare for Success
+        p.lead Create lists of interview questions to prepare you for your dream job.
+        button.btn.btn-lg.btn-light.sign-up(data-toggle='modal', data-target='#signUpModal') Sign Up
+        small
+          | Already have an account? 
+          a(href='#', data-toggle='modal', data-target='#loginModal') Log in
+    // end of jumbotron
+    .container.features
+      // create lists row
+      .row.feature-section
+        .col-lg-6.order-2.order-lg-1
+          h2 Create custom lists of interview questions
+          p
+            | Cornhole humblebrag unicorn retro, intelligentsia 90's letterpress kinfolk DIY meditation succulents venmo. kickstarter fixie gastropub unicorn tbh. Gluten-free la croix aesthetic jean shorts beard. Flannel blog bushwick you probably haven't heard of them venmo. Before they sold out fixie biodiesel distillery swag portland, four dollar toast truffaut gentrify. Shabby chic gastropub flexitarian VHS. Shabby chic messenger bag truffaut raw denim tousled viral. Etsy listicle gentrify forage next level shoreditch plaid. Chillwave master cleanse truffaut VHS.
+        .col-lg-6.order-1.order-lg-2
+          img.img-fluid(src='http://via.placeholder.com/500x300')
+      // search lists row
+      .row.feature-section
+        .col-lg-6
+          img.img-fluid(src='http://via.placeholder.com/500x300')
+        .col-lg-6
+          h2 Create custom lists of interview questions
+          p
+            | Cornhole humblebrag unicorn retro, intelligentsia 90's letterpress kinfolk DIY meditation succulents venmo. fixie gastropub unicorn tbh. Gluten-free la croix aesthetic jean shorts beard. Flannel blog bushwick you probably haven't heard of them venmo. Before they sold out fixie biodiesel distillery swag portland, four dollar toast truffaut gentrify. Shabby chic gastropub flexitarian VHS. Shabby chic messenger bag truffaut raw denim tousled viral. Etsy listicle gentrify forage next level shoreditch plaid. Chillwave master cleanse truffaut VHS.
+    // end of features
+    #contact.container-fluid
+      .container
+        .row
+          .col-lg-6
+            h1 Contact Us
+            p
+              | Cornhole humblebrag unicorn retro, intelligentsia 90's letterpress kinfolk DIY meditation succulents venmo. kickstarter fixie gastropub unicorn tbh. Gluten-free la croix aesthetic jean shorts beard. Flannel blog bushwick you probably haven't heard of them venmo. Before they sold out fixie biodiesel distillery swag portland, four dollar toast truffaut gentrify. Shabby chic gastropub flexitarian VHS. Shabby chic messenger bag truffaut raw denim tousled viral. Etsy listicle gentrify forage next level shoreditch plaid. Chillwave master cleanse truffaut VHS.
+          .col-lg-6.contact-form
+            form
+              .form-group
+                label(for='exampleInputEmail1') Email address
+                input#exampleInputEmail1.form-control(type='email', aria-describedby='emailHelp', placeholder='Enter email')
+              .form-group
+                label(for='exampleInputPassword1') Message
+                textarea.form-control(placeholder='How can we help?')
+              button.btn.btn-lg.btn-outline-light(type='submit') Submit
+    // footer
+    footer
+      .container
+        p All rights reservered 2017©
+    // end of footer
+    // Sign Up Modal
+    #signUpModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='signUpLabel', aria-hidden='true')
+      .modal-dialog(role='document')
+        .modal-content
+          .modal-header
+            h4#signUpLabel.modal-title Sign Up
+            button.close(type='button', data-dismiss='modal', aria-label='Close')
+              span(aria-hidden='true') ×
+          .modal-body
+            form
+              .form-group
+                label(for='exampleInputEmail1') Email address
+                input#exampleInputEmail1.form-control(type='email', aria-describedby='emailHelp', placeholder='Enter email')
+              .form-group
+                label(for='exampleInputPassword1') Password
+                input#exampleInputPassword1.form-control(type='password', placeholder='Password')
+              .form-group
+                label(for='exampleInputPassword1') Confirm Password
+                input#exampleInputPassword1.form-control(type='password', placeholder='Password')
+          .modal-footer
+            button.btn.btn-secondary(type='button', data-dismiss='modal') Close
+            button.btn.btn-dark(type='button') Sign Up
+    // Login Modal
+    #loginModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='loginLabel', aria-hidden='true')
+      .modal-dialog(role='document')
+        .modal-content
+          .modal-header
+            h4#loginLabel.modal-title Log in
+            button.close(type='button', data-dismiss='modal', aria-label='Close')
+              span(aria-hidden='true') ×
+          .modal-body
+            form
+              .form-group
+                label(for='exampleInputEmail1') Email address
+                input#exampleInputEmail1.form-control(type='email', aria-describedby='emailHelp', placeholder='Enter email')
+              .form-group
+                label(for='exampleInputPassword1') Password
+                input#exampleInputPassword1.form-control(type='password', placeholder='Password')
+          .modal-footer
+            button.btn.btn-secondary(type='button', data-dismiss='modal') Close
+            button.btn.btn-dark(type='button') Log In
+    // frontend code
+    script(src='js/frontend.js')
