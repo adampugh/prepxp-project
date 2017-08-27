@@ -292,18 +292,47 @@ div .item-links {
 
 .pending-questions {
     min-height: 15em;
+    padding-top: 5em;
 }
 
 .pending-questions h5 {
     text-align: center;
-    padding-top: 5em;
     color: darkgray;
 }
 
+.question-item {
+    background: whitesmoke;
+    padding: 1em;
+    border-radius: 10px;
+    margin-bottom: 1em;
+}
 
+.question-item p {
+    margin-bottom: 0;
+    display: inline;
+}
 
+.question-item button {
+    display: inline-block;
+    padding: 0;
+    line-height: inherit;
+    background: silver;
+    border: none;
 
+}
 
+.question-item-close {
+    float: right;
+    border-radius: 10px;  
+}
+
+.question-item-close span {
+    padding: 1em;
+}
+
+.add-list-button-div {
+    margin: 2em;
+}
 
 /* MEDIA QUERIES  */
 

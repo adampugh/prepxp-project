@@ -3,28 +3,28 @@ html
   body
     // navbar
     nav#navbar-loggedin.navbar.navbar-expand-lg.navbar-light
-      a.navbar-brand(href='#') PrepXP
+      a.navbar-brand(href='/') PrepXP
       button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
         span.navbar-toggler-icon
       #navbarSupportedContent.collapse.navbar-collapse
         ul.navbar-nav.ml-md-auto.center-links
           li.nav-item
-            a.nav-link(href='#') Create
+            a.nav-link(href='/createlist') Create
           li.nav-item
             span.nav-link(href='#') |
           li.nav-item
-            a.nav-link(href='#') Search
+            a.nav-link(href='/search') Search
           li.nav-item
             span.nav-link(href='#') |
           li.nav-item
             a.nav-link(href='#') Blog
         ul.navbar-nav.ml-auto
           li.nav-item
-            a.nav-link(href='#', data-toggle='modal', data-target='#signUpModal') Profile
+            a.nav-link(href='/profile') Profile
           li.nav-item
             span.nav-link(href='#') |
           li.nav-item.last-nav-item
-            a.nav-link(href='#', data-toggle='modal', data-target='#loginModal') Logout
+            a.nav-link(href='#') Logout
     // end of navbar
     // main content
     .container-fluid.search-content
@@ -38,16 +38,17 @@ html
               button.btn.btn-outline-light(type='button') Search
       // end of search box
       .recommended.row
-        .col-lg-2.ml-auto.recommended-search.box-hr
+        .col-lg-2.ml-auto.recommended-search.box-hr.fade-in
           h3 HR
-        .col-lg-2.recommended-search.box-teaching
+        .col-lg-2.recommended-search.box-teaching.fade-in
           h3 Teaching
-        .col-lg-2.recommended-search.box-admin
+        .col-lg-2.recommended-search.box-admin.fade-in
           h3 Admin
-        .col-lg-2.mr-auto.recommended-search.box-sales
+        .col-lg-2.mr-auto.recommended-search.box-sales.fade-in
           h3 Sales
     // footer
     footer.footer
       .container
         p All rights reservered 2017©
     // end of footer
+  include footer.pug

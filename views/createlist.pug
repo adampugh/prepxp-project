@@ -4,28 +4,28 @@ html
   body
     // navbar
     nav#navbar-loggedin.navbar.navbar-expand-lg.navbar-light
-      a.navbar-brand(href='#') PrepXP
+      a.navbar-brand(href='/') PrepXP
       button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
         span.navbar-toggler-icon
       #navbarSupportedContent.collapse.navbar-collapse
         ul.navbar-nav.ml-md-auto.center-links
           li.nav-item
-            a.nav-link(href='#') Create
+            a.nav-link(href='/createlist') Create
           li.nav-item
             span.nav-link(href='#') |
           li.nav-item
-            a.nav-link(href='#') Search
+            a.nav-link(href='/search') Search
           li.nav-item
             span.nav-link(href='#') |
           li.nav-item
             a.nav-link(href='#') Blog
         ul.navbar-nav.ml-auto
           li.nav-item
-            a.nav-link(href='#', data-toggle='modal', data-target='#signUpModal') Profile
+            a.nav-link(href='/profile') Profile
           li.nav-item
             span.nav-link(href='#') |
           li.nav-item.last-nav-item
-            a.nav-link(href='#', data-toggle='modal', data-target='#loginModal') Logout
+            a.nav-link(href='#') Logout
     // end of navbar
     // main content
     .container-fluid
@@ -34,15 +34,19 @@ html
           h1 Add Question
           p Enter a question below to add to the interview questions list
           .input-group
-            input.form-control(type='text', placeholder='Why do you want to work here?', aria-label='Search for...')
+            input#question-input.form-control(type='text', placeholder='Why do you want to work here?', aria-label='Search for...')
             span.input-group-btn
-              button.btn.btn-outline-light(type='button') Add
+              button#add-button.btn.btn-outline-light(type='button') Add
       // end of search box
       .row
-        .col-lg-12.pending-questions
-          h5 No questions added yet. Add some questions!
+        .col-lg-12.pending-questions 
+          h5.no-questions No questions added yet. Add some questions!
+      .row
+        .col-lg-6.mx-auto.add-list-button-div
+          button.btn.btn-dark.btn-block Create List
     // footer
     footer.footer
       .container
         p All rights reservered 2017©
     // end of footer
+  include footer.pug

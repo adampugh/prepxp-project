@@ -3,24 +3,24 @@ html
   body
     // navbar
     nav#navbar-loggedin.navbar.navbar-expand-lg.navbar-light
-      a.navbar-brand(href='#') PrepXP
+      a.navbar-brand(href='/') PrepXP
       button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
         span.navbar-toggler-icon
       #navbarSupportedContent.collapse.navbar-collapse
         ul.navbar-nav.ml-md-auto.center-links
           li.nav-item
-            a.nav-link(href='#') Create
+            a.nav-link(href='/createlist') Create
           li.nav-item
             span.nav-link(href='#') |
           li.nav-item
-            a.nav-link(href='#') Search
+            a.nav-link(href='/search') Search
           li.nav-item
             span.nav-link(href='#') |
           li.nav-item
             a.nav-link(href='#') Blog
         ul.navbar-nav.ml-auto
           li.nav-item
-            a.nav-link(href='#', data-toggle='modal', data-target='#signUpModal') Profile
+            a.nav-link(href='/profile', data-toggle='modal', data-target='#signUpModal') Profile
           li.nav-item
             span.nav-link(href='#') |
           li.nav-item.last-nav-item
@@ -28,7 +28,7 @@ html
     // end of navbar
     // main content
     .container-fluid
-      .row
+      .row.fade-in
         // display lists
         .col-lg-9.left-panel
           h1.welcome-message Welcome, Bob!
@@ -75,3 +75,4 @@ html
       .container
         p All rights reservered 2017©
     // end of footer
+  include footer.pug
