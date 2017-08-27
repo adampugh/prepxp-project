@@ -4,17 +4,22 @@ sr.reveal(".fade-in", {duration: 2000});
 
 
 
-//create list page add button
+//create list page
 var questions;
 
-
-$("#add-button").on("click", displayQuestion);
-$("#question-input").keypress(function(e) {
-    if(e.which == 13) {
+$("#add-button").on("click", function() {
+    if($("#question-input").val().length > 0) {
         displayQuestion();
     }
 });
 
+$("#question-input").keypress(function(e) {
+    if(e.which == 13 && $("#question-input").val().length > 0) {
+        displayQuestion();
+    }
+});
+
+//  removes question item from page and questions array
 function deleteQuestion () {
 
     var questionText = $(this).parent().children("p")[0].innerHTML;
@@ -27,13 +32,10 @@ function deleteQuestion () {
             }
         }
     }
-
     $(this).parent().remove();
-
 }
 
-
-
+// creates question item div
 function displayQuestion () {
     questions = questions || [];
 
@@ -45,15 +47,11 @@ function displayQuestion () {
     question.answer = "";
     questions.push(question);
 
-
     $(".pending-questions").append(`<div class="question-item col-lg-6 mx-auto"><p>${questionInput}</p><button class='btn btn-dark question-item-close'><span>&#9747;</span></button></div>`);
 
     console.log(questions);
     $("#question-input").val("");
 
-    
-    $(".question-item button").on("click", deleteQuestion);
+
+    $(".pending-questions:last-child > .question-item button").on("click", deleteQuestion);
 };
-
-
-
