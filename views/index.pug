@@ -86,19 +86,22 @@ html
             button.close(type='button', data-dismiss='modal', aria-label='Close')
               span(aria-hidden='true') ×
           .modal-body
-            form
+            form(action="/signup" method="POST")
               .form-group
-                label(for='exampleInputEmail1') Email address
-                input#exampleInputEmail1.form-control(type='email', aria-describedby='emailHelp', placeholder='Enter email')
+                label(for='exampleInputEmail1') Name
+                input#exampleInputEmail1.form-control(type='text', aria-describedby='emailHelp', placeholder='Enter name' name="userName")
+              .form-group
+                label(for='exampleInputPassword1') Email address
+                input#exampleInputPassword1.form-control(type='email', placeholder='Enter email' name="userEmail")
               .form-group
                 label(for='exampleInputPassword1') Password
-                input#exampleInputPassword1.form-control(type='password', placeholder='Password')
+                input#exampleInputPassword1.form-control(type='password', placeholder='Password' name="userPassword")
               .form-group
-                label(for='exampleInputPassword1') Confirm Password
-                input#exampleInputPassword1.form-control(type='password', placeholder='Password')
+                button.btn.btn-secondary(type='button', data-dismiss='modal') Close
+                button.btn.btn-dark(type='submit') Sign Up
           .modal-footer
             button.btn.btn-secondary(type='button', data-dismiss='modal') Close
-            button.btn.btn-dark(type='button') Sign Up
+            button.btn.btn-dark(type='submit') Sign Up
     // Login Modal
     #loginModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='loginLabel', aria-hidden='true')
       .modal-dialog(role='document')
@@ -108,13 +111,16 @@ html
             button.close(type='button', data-dismiss='modal', aria-label='Close')
               span(aria-hidden='true') ×
           .modal-body
-            form
+            form(method="POST" action="/login")
               .form-group
                 label(for='exampleInputEmail1') Email address
-                input#exampleInputEmail1.form-control(type='email', aria-describedby='emailHelp', placeholder='Enter email')
+                input#exampleInputEmail1.form-control(type='email', aria-describedby='emailHelp', placeholder='Enter email' name="email")
               .form-group
                 label(for='exampleInputPassword1') Password
-                input#exampleInputPassword1.form-control(type='password', placeholder='Password')
+                input#exampleInputPassword1.form-control(type='password', placeholder='Password' name="password")
+              .form-group
+                button.btn.btn-secondary(type='button', data-dismiss='modal') Close
+                button.btn.btn-dark(type='submit') Log In
           .modal-footer
             button.btn.btn-secondary(type='button', data-dismiss='modal') Close
             button.btn.btn-dark(type='button') Log In
