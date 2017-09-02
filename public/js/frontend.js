@@ -60,16 +60,18 @@ function displayQuestion () {
 // sends question array to the server
 $("#submit-question-list").on("click", function() {
     if (questions.length > 0) {
-        // create quetsion list object
+        // create question list object
         var questionList = {
-            title: title,
-            questions: questions
         }
+        questionList.title = title;
+        questionList.questions = questions;
+        
 
         $.ajax({
             type: "POST",
             url: "/profile",
-            data: questionList,
+            dataType: "json",
+            data: {questionList: JSON.stringify(questionList)}
         });
 
     }

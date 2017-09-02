@@ -33,21 +33,17 @@ html
         .col-lg-9.left-panel
           h1.welcome-message Welcome, #{username}!
           .lists
-          if questionLists.length === 0 
-          each val in questionLists       
+          if questionLists.length > 0   
+          each val, i in questionLists       
             .list-item.row
               .col-sm-8
-                h3 #{val.title}
-              //-   p.question-number #{val.questions.length} questions
+                h3 #{questionLists[i].title}
+                p.question-number #{questionLists[i].questions.length} questions
               .col-sm-4.item-links
                 p.text-right
                   a(href='#') Edit
                 p.text-right
                   a(href='#') Delete
-         
-          
-            
-            
           // end of lists section
         // end of column
         // sidebar links

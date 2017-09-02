@@ -87,7 +87,11 @@ router.post("/profile", mid.requiresLogin, function(req, res) {
             if (error) {
                 return next(error);
             } else {
-                user.questionLists.push(req.body);
+                
+                var questionsObj = JSON.parse(req.body.questionList);
+
+                user.questionLists.push(questionsObj);
+
                 user.save(function(err) {
                     if (err) {
                         var err = new Error("Failed to save to database");
