@@ -25,7 +25,7 @@ html
           li.nav-item
             span.nav-link(href='#') |
           li.nav-item.last-nav-item
-            a.nav-link(href='#') Logout
+            a.nav-link(href='/logout') Logout
     // end of navbar
     // main content
     .container-fluid
@@ -43,10 +43,27 @@ html
           h5.no-questions No questions added yet. Add some questions!
       .row
         .col-lg-6.mx-auto.add-list-button-div
-          button.btn.btn-dark.btn-block Create List
+          a#submit-question-list.btn.btn-dark.btn-block(href="/profile") Create List
     // footer
     footer.footer
       .container
         p All rights reservered 2017©
     // end of footer
+    //list title modal
+    #titleModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='loginLabel', aria-hidden='true')
+      .modal-dialog(role='document')
+        .modal-content
+          .modal-header
+            h4#loginLabel.modal-title Interview List Title
+            button.close(type='button', data-dismiss='modal', aria-label='Close')
+              span(aria-hidden='true') ×
+          .modal-body
+            form(action="")
+              .form-group
+                label(for='exampleInputEmail1') Job Title
+                input#titleInput.form-control(type='text', aria-describedby='emailHelp', placeholder='Enter title' name="listTitle")
+              .form-group
+                button#title-button.btn.btn-dark(type='button') Start List
   include footer.pug
+  // createlist js code
+  script(src='js/createlist.js')

@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const bodyParser = require("body-parser");
 const User = require("../models/user.js");
+const mid = require("../middleware/mid.js");
 
 
 router.get("/", function(req, res) {
@@ -53,13 +54,23 @@ router.post("/login", function(req, res, next) {
     }
 });
 
-
-router.get("/createlist", function(req, res) {
-    if (!req.session.userId) {
-        var err = new Error("Please log in");
-        err.status = 403;
-        return next(err);
+router.get("/logout", mid.requiresLogin, function(req, res, next) {
+    if (req.session) {
+        // if exists delete it
+        req.session.destroy(function(err) {
+            if (err) {
+                return next(err);
+            } else {
+                return res.redirect("/");
+            }
+        });
     }
+});
+
+
+
+
+router.get("/createlist", mid.requiresLogin, function(req, res) {
     User.findById(req.session.userId)
         .exec(function(error, user) {
             if (error) {
@@ -70,12 +81,27 @@ router.get("/createlist", function(req, res) {
         });
 })
 
-router.get("/search", function(req, res) {
-    if (!req.session.userId) {
-        var err = new Error("Please log in");
-        err.status = 403;
-        return next(err);
-    }
+router.post("/profile", mid.requiresLogin, function(req, res) {
+    User.findById(req.session.userId)
+        .exec(function(error, user) {
+            if (error) {
+                return next(error);
+            } else {
+                user.questionLists.push(req.body);
+                user.save(function(err) {
+                    if (err) {
+                        var err = new Error("Failed to save to database");
+                        err.status = 500;
+                        next(err);
+                    } else {
+                        res.end();
+                    }
+                });
+            }
+        });
+});
+
+router.get("/search", mid.requiresLogin, function(req, res) {
     User.findById(req.session.userId)
         .exec(function(error, user) {
             if (error) {
@@ -86,18 +112,13 @@ router.get("/search", function(req, res) {
         });
 })
 
-router.get("/profile", function(req, res) {
-    if (!req.session.userId) {
-        var err = new Error("Please log in");
-        err.status = 403;
-        return next(err);
-    }
+router.get("/profile", mid.requiresLogin, function(req, res) {
     User.findById(req.session.userId)
         .exec(function(error, user) {
             if (error) {
                 return next(error);
             } else {
-                return res.render("profile", {username: user.username})
+                return res.render("profile", {username: user.username, questionLists: user.questionLists});
             }
         });
 })

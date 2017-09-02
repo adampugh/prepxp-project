@@ -55,3 +55,22 @@ function displayQuestion () {
 
     $(".pending-questions:last-child > .question-item button").on("click", deleteQuestion);
 };
+
+
+// sends question array to the server
+$("#submit-question-list").on("click", function() {
+    if (questions.length > 0) {
+        // create quetsion list object
+        var questionList = {
+            title: title,
+            questions: questions
+        }
+
+        $.ajax({
+            type: "POST",
+            url: "/profile",
+            data: questionList,
+        });
+
+    }
+});

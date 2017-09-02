@@ -3,14 +3,9 @@ const pug = require("pug");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const session = require("express-session");
+const MongoStore = require("connect-mongo")(session);
 const app = express();
 
-//session middleware for tracking logins
-app.use(session({
-    secret: "2pacisalive",
-    resave: true,
-    saveUninitialized: false
-}));
 
 
 //mongodb connection
@@ -19,6 +14,25 @@ var db = mongoose.connection;
 
 //mongo error
 db.on("error", console.error.bind(console, "connection error:"));
+
+//session middleware for tracking logins
+app.use(session({
+    secret: "2pacisalive",
+    resave: true,
+    saveUninitialized: false,
+    store: new MongoStore({
+        mongooseConnection: db
+    })
+}));
+
+
+// make session ID available to templates
+app.use(function(req, res, next) {
+    // locals allows you add variables to the response obj
+    res.locals.currentUser = req.session.userId;
+    next();
+});
+
 
 // routing
 const routes = require("./routes/routes");

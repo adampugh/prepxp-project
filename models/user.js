@@ -17,6 +17,10 @@ var UserSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    passwordHashed: {
+        type: Boolean,
+        default: false
+    },
     questionLists: {
         type: Array
     }
@@ -47,13 +51,19 @@ UserSchema.statics.authenticate = function(email, password, callback) {
 //hash password before saving to the database
 UserSchema.pre("save", function(next) {
     var user = this;
-    bcrypt.hash(user.password, 10, function(err, hash) {
-        // if (err) {
-        //     return next(err)
-        // }
-        user.password = hash;
+    if (user.passwordHashed === false) {    
+        bcrypt.hash(user.password, 10, function(err, hash) {
+            // if (err) {
+            //     return next(err)
+            // }
+            // create a user.passwordHashed boolean value to bypass this code if password is already hashed.
+            user.password = hash;
+            user.passwordHashed = true;
+            next();
+        });
+    } else {
         next();
-    });
+    }
 });
 
 var User = mongoose.model("User", UserSchema);

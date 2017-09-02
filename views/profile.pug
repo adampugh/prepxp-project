@@ -24,7 +24,7 @@ html
           li.nav-item
             span.nav-link(href='#') |
           li.nav-item.last-nav-item
-            a.nav-link(href='#', data-toggle='modal', data-target='#loginModal') Logout
+            a.nav-link(href='/logout') Logout
     // end of navbar
     // main content
     .container-fluid
@@ -33,26 +33,21 @@ html
         .col-lg-9.left-panel
           h1.welcome-message Welcome, #{username}!
           .lists
+          if questionLists.length === 0 
+          each val in questionLists       
             .list-item.row
               .col-sm-8
-                h3 HR Manager
-                p.question-number 20 questions
+                h3 #{val.title}
+              //-   p.question-number #{val.questions.length} questions
               .col-sm-4.item-links
                 p.text-right
                   a(href='#') Edit
                 p.text-right
                   a(href='#') Delete
-            // end of list item
-            .list-item.row
-              .col-sm-8
-                h3 JavaScript Developer
-                p.question-number 33 questions
-              .col-sm-4.item-links
-                p.text-right
-                  a(href='#') Edit
-                p.text-right
-                  a(href='#') Delete
-            // end of list item
+         
+          
+            
+            
           // end of lists section
         // end of column
         // sidebar links
@@ -61,15 +56,15 @@ html
             .col-sm-12.side-link-block
               h4 Create
               p Create a new list of interview questions by clicking the button below
-              button.btn.btn-outline-light Create List
+              a.btn.btn-outline-light(href="/createlist") Create List
             .col-sm-12.side-link-block
               h4 Search
               p Search through hundreds of interview question lists and land your dream job.
-              button.btn.btn-outline-light Search Lists
+              a.btn.btn-outline-light(href="/search") Search Lists
             .col-sm-12.side-link-block
               h4 Blog
               p Read artiles from some of the leading experts in hiring and land your dream job.
-              button.btn.btn-outline-light Read Blog
+              a.btn.btn-outline-light(href="#") Read Blog
     // footer
     footer
       .container
