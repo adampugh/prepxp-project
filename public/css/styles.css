@@ -334,6 +334,72 @@ div .item-links {
     margin: 2em;
 }
 
+
+/* ==========================  */
+/* INTERVIEW PAGE  */
+/* ==========================  */
+
+.interview-question {
+    margin-top: 2em;
+    padding: 1em;
+    border-radius: 10px;
+    background: whitesmoke;
+}
+
+.answer-div {
+    color: white;
+    background: darkgrey;
+    padding: .2em;
+    border-radius: 10px;
+    margin-bottom: 2em;
+}
+
+.previous-answer {
+    text-align: center;
+    line-height: 1;
+    padding: .5em;
+    margin: 0;
+}
+
+.answer-text {
+    display: none;
+    background: white;
+    border: .1px solid silver;
+    border-radius: 10px;
+    color: silver;
+    padding: 1em;
+}
+
+.answer-box textarea{
+    display: block;
+
+}
+.answer-box button {
+    margin-top: .5em;
+    display: block;
+    border-radius: 10px;
+}
+
+.answer-box {
+    margin: 4em 0 6em 0;
+}
+
+.goodluck {
+    display: none;
+    color: white;
+}
+
+.goodluck-page {
+    height: calc(90vh - 72px);
+    background: linear-gradient( rgba(33, 37, 41, 0.9), rgba(245, 245, 245, 0.4)), url("/img/goodluck2.jpg") no-repeat center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+
+
 /* MEDIA QUERIES  */
 
 /* mobile */

@@ -127,4 +127,11 @@ router.get("/profile", mid.requiresLogin, function(req, res) {
         });
 })
 
+
+router.get("/interview", mid.requiresLogin, function(req, res) {
+    res.render("interview");
+});
+
+
+
 module.exports = router;

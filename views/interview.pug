@@ -1,0 +1,56 @@
+
+html
+  include header.pug
+  body
+    // navbar
+    nav#navbar-loggedin.navbar.navbar-expand-lg.navbar-light
+      a.navbar-brand(href='#') PrepXP
+      button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      #navbarSupportedContent.collapse.navbar-collapse
+        ul.navbar-nav.ml-md-auto.center-links
+          li.nav-item
+            a.nav-link(href='#') Create
+          li.nav-item
+            span.nav-link(href='#') |
+          li.nav-item
+            a.nav-link(href='#') Search
+          li.nav-item
+            span.nav-link(href='#') |
+          li.nav-item
+            a.nav-link(href='#') Blog
+        ul.navbar-nav.ml-auto
+          li.nav-item
+            a.nav-link(href='/profile') Profile
+          li.nav-item
+            span.nav-link(href='#') |
+          li.nav-item.last-nav-item
+            a.nav-link(href='/logout') Logout
+    // end of navbar
+    // main content
+    #interview-page.container-fluid
+      .row
+        .col-lg-6.mx-auto.question-div
+          h3.interview-question
+          .answer-div
+            p.previous-answer Previous Answer
+            .answer-text
+              p
+          .answer-box
+            textarea.form-control(rows='8', type='text', placeholder='Answer...', aria-label='Search for...')
+            button.btn.btn-dark.btn-block.save-answer(type='button') Save Answer
+      // end interview block
+      .row.goodluck
+        .col-lg-6.mx-auto.search.side-link-block
+          h1 Good Luck!
+          p Best of luck with your upcoming job interviews!
+          a.btn.btn-block.btn-outline-light(href='/profile') Return to Profile
+      // end of goodluck div
+      // footer
+    footer
+      .container
+        p All rights reservered 2017©
+        // end of footer
+  include footer.pug
+  // interview js code
+  script(src='js/interview.js')
