@@ -114,7 +114,7 @@ router.get("/search", mid.requiresLogin, function(req, res) {
                 return res.render("search", {username: user.username})
             }
         });
-})
+});
 
 router.get("/profile", mid.requiresLogin, function(req, res) {
     User.findById(req.session.userId)
@@ -125,13 +125,52 @@ router.get("/profile", mid.requiresLogin, function(req, res) {
                 return res.render("profile", {username: user.username, questionLists: user.questionLists});
             }
         });
-})
-
-
-router.get("/interview", mid.requiresLogin, function(req, res) {
-    res.render("interview");
 });
 
 
+
+router.get("/interview/:id", mid.requiresLogin, function(req, res) {
+    User.findById(req.session.userId)
+        .exec(function(error, user) {
+            if (error) {
+                return next(error);
+            } else {
+                // retreive querystring and search for matching obj in mongo
+                var questionsToSend;
+
+                for (var i = 0; i < user.questionLists.length; i++) {
+                    if (req.params.id === user.questionLists[i].title) {
+                        res.locals.questions = user.questionLists[i];
+                    }
+                }
+                
+                return res.render("interview", {questionLists: user.questionLists});
+                
+            }
+        });
+});
+
+
+router.post("/saveanswer", function(req, res) {
+    User.findById(req.session.userId)
+        .exec(function(error, user) {
+            if (error) {
+                return next(error);
+            } else {
+                
+                var questionCounter = req.body.questionCounter;
+                var questionTitle = req.body.questionTitle;
+                var userAnswer = req.body.userAnswer;
+
+                for (var i = 0; i < user.questionLists.length; i++) {
+                    if (questionTitle === user.questionLists[i].title) {
+                        user.questionLists[i].questions[questionCounter].answer = userAnswer;
+                        user.markModified('questionLists');
+                        user.save();
+                    }
+                }
+            }
+        });
+});
 
 module.exports = router;

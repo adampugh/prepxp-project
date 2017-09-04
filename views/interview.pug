@@ -10,11 +10,11 @@ html
       #navbarSupportedContent.collapse.navbar-collapse
         ul.navbar-nav.ml-md-auto.center-links
           li.nav-item
-            a.nav-link(href='#') Create
+            a.nav-link(href='/create') Create
           li.nav-item
             span.nav-link(href='#') |
           li.nav-item
-            a.nav-link(href='#') Search
+            a.nav-link(href='/search') Search
           li.nav-item
             span.nav-link(href='#') |
           li.nav-item
@@ -28,6 +28,8 @@ html
             a.nav-link(href='/logout') Logout
     // end of navbar
     // main content
+
+    
     #interview-page.container-fluid
       .row
         .col-lg-6.mx-auto.question-div
@@ -37,7 +39,7 @@ html
             .answer-text
               p
           .answer-box
-            textarea.form-control(rows='8', type='text', placeholder='Answer...', aria-label='Search for...')
+            textarea#user-answer.form-control(rows='8', type='text', placeholder='Answer...', aria-label='Search for...')
             button.btn.btn-dark.btn-block.save-answer(type='button') Save Answer
       // end interview block
       .row.goodluck
@@ -53,4 +55,9 @@ html
         // end of footer
   include footer.pug
   // interview js code
-  script(src='js/interview.js')
+  script.
+    // ! is required to use objects, # is used for strings
+    var questions = !{JSON.stringify(locals.questions.questions)};
+    var questionTitle = !{JSON.stringify(locals.questions.title)};
+    
+  script(src='/js/interview.js')

@@ -34,10 +34,13 @@ html
           h1.welcome-message Welcome, #{username}!
           .lists
           if questionLists.length > 0   
-          each val, i in questionLists       
+          each val, i in questionLists  
+            -var queryStr = "/interview/" + questionLists[i].title
+            
             .list-item.row
-              .col-sm-8
-                h3 #{questionLists[i].title}
+              .col-sm-8    
+                a(href=queryStr)
+                  h3.question-list-title #{questionLists[i].title}
                 p.question-number #{questionLists[i].questions.length} questions
               .col-sm-4.item-links
                 p.text-right
@@ -67,3 +70,4 @@ html
         p All rights reservered 2017©
     // end of footer
   include footer.pug
+  script(src='js/profile.js')

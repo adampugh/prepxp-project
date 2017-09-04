@@ -9,26 +9,7 @@ $(".answer-div").on("click", function() {
     }
 });
 
-// dummy data
-var questions = [
-    {
-        question: "Why do you like stuff",
-        answer: "because i do"
-    },
-    {
-        question: "Do you like things",
-        answer: "no i hate them"
-    },
-    {
-        question: "Why is it?",
-        answer: "never again"
-    },
-    {
-        question: "Is cake real",
-        answer: "no i don't think so"
-    }
-];
-var userAnswer = "";
+var userAnswer;
 var interviewQuestion = $(".interview-question");
 var answerText = $(".answer-text p");
 var questionDiv = $(".question-div");
@@ -38,7 +19,11 @@ function displayQuestion() {
     if (questionCounter < (questions.length)) {
         questionDiv.fadeIn("slow");
         interviewQuestion.text("Q" + (questionCounter + 1) + ": " + questions[questionCounter].question);
-        answerText.text(questions[questionCounter].answer);
+        if (questions[questionCounter].answer === "") {
+            answerText.text("Add an answer");
+        } else {
+            answerText.text(questions[questionCounter].answer);
+        }
     } else {
         questionDiv.hide();
         $("#interview-page").addClass("goodluck-page");
@@ -46,11 +31,26 @@ function displayQuestion() {
     }
 }
 
-$(".save-answer").on("click", function() {
+$(".save-answer").on("click", function() {   
+    userAnswer = $("#user-answer").val();
+    
+    // if userAnswer is not empty
+    //send userAnswer + questionCounter + list title to server
+    if (userAnswer !== "") {
+        $.ajax({
+            type: "POST",
+            url: "/saveanswer",
+            dataType: "json",
+            data: {questionTitle: questionTitle, questionCounter: questionCounter, userAnswer: userAnswer}
+        });
+    }
+
     questionCounter++;
+    
     questionDiv.fadeOut("slow", function() {
+        $("#user-answer").val("");
         displayQuestion();
     });
 });
 
-displayQuestion();
+displayQuestion(); 

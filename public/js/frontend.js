@@ -76,3 +76,16 @@ $("#submit-question-list").on("click", function() {
 
     }
 });
+
+
+// PROFILE PAGE
+var index;
+
+
+// click button on profile page send index to server
+$(".list-item").on("click", function() {
+    var element = this;
+    //  minus 2 as first two elements are headings
+    index = Array.from(element.parentNode.children).indexOf(element) - 2;
+    return index;
+});
