@@ -3,33 +3,9 @@ html
   include header.pug
   body
     // navbar
-    nav#navbar-loggedin.navbar.navbar-expand-lg.navbar-light
-      a.navbar-brand(href='#') PrepXP
-      button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
-        span.navbar-toggler-icon
-      #navbarSupportedContent.collapse.navbar-collapse
-        ul.navbar-nav.ml-md-auto.center-links
-          li.nav-item
-            a.nav-link(href='/create') Create
-          li.nav-item
-            span.nav-link(href='#') |
-          li.nav-item
-            a.nav-link(href='/search') Search
-          li.nav-item
-            span.nav-link(href='#') |
-          li.nav-item
-            a.nav-link(href='#') Blog
-        ul.navbar-nav.ml-auto
-          li.nav-item
-            a.nav-link(href='/profile') Profile
-          li.nav-item
-            span.nav-link(href='#') |
-          li.nav-item.last-nav-item
-            a.nav-link(href='/logout') Logout
-    // end of navbar
-    // main content
-
+    include navbar-in.pug
     
+    // main content
     #interview-page.container-fluid
       .row
         .col-lg-6.mx-auto.question-div

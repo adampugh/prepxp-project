@@ -399,6 +399,27 @@ div .item-links {
 }
 
 
+/* =====================  */
+/* BLOG PAGE  */
+/* =====================  */
+.blog {
+    padding-top: 10em;
+    background: linear-gradient( rgba(33, 37, 41, 0.9), rgba(245, 245, 245, 0.4)), url("/img/blog.jpg") no-repeat center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; 
+}
+
+.blog-features {
+    margin-top: 27em;
+}
+
+.blog-post:last-child {
+    margin-bottom: 5em;
+}
+
+
 
 /* MEDIA QUERIES  */
 
