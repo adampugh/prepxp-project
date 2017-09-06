@@ -3,6 +3,24 @@ window.sr = ScrollReveal();
 sr.reveal(".fade-in", {duration: 2000});
 
 
+// smooth scroll to divs from navbar
+$("a[href='#features']").on("click", function() {
+    $('html, body').animate({
+        scrollTop: $("#features").offset().top
+    }, 1000);
+});
+
+$("a[href='#contact']").on("click", function() {
+    $('html, body').animate({
+        scrollTop: $("#contact").offset().top
+    }, 1000);
+});
+
+
+
+
+
+
 
 //create list page
 var questions;
