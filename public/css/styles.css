@@ -133,6 +133,13 @@ footer {
     margin: 0 auto;
 }
 
+.modal-buttons button {
+    margin-top: 2em;
+}
+
+
+
+
 /* ===============================  */
 /* PROFILE PAGE  */
 /* ===============================  */

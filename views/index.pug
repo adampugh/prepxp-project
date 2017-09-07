@@ -96,12 +96,8 @@ html
               .form-group
                 label(for='exampleInputPassword1') Password
                 input#exampleInputPassword1.form-control(type='password', placeholder='Password' name="userPassword")
-              .form-group
-                button.btn.btn-secondary(type='button', data-dismiss='modal') Close
-                button.btn.btn-dark(type='submit') Sign Up
-          .modal-footer
-            button.btn.btn-secondary(type='button', data-dismiss='modal') Close
-            button.btn.btn-dark(type='submit') Sign Up
+              .form-group.modal-buttons
+                button.btn.btn-dark.btn-block(type='submit') Sign Up
     // Login Modal
     #loginModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='loginLabel', aria-hidden='true')
       .modal-dialog(role='document')
@@ -118,11 +114,7 @@ html
               .form-group
                 label(for='exampleInputPassword1') Password
                 input#exampleInputPassword1.form-control(type='password', placeholder='Password' name="password")
-              .form-group
-                button.btn.btn-secondary(type='button', data-dismiss='modal') Close
-                button.btn.btn-dark(type='submit') Log In
-          .modal-footer
-            button.btn.btn-secondary(type='button', data-dismiss='modal') Close
-            button.btn.btn-dark(type='button') Log In
+              .form-group.modal-buttons
+                button.btn.btn-dark.btn-block(type='submit') Log In
     include footer.pug
     
