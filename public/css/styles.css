@@ -114,18 +114,29 @@ a:focus {
     padding-top: 1em;
 }
 
+.contact-form .btn-outline-light {
+    font-size: 1rem;
+}
+
+
+.btn-outline-light:hover {
+    color: #212529;
+}
+
+
 /* FOOTER  */
 
 footer {
     background: #202020;
     color: white;
-    padding: 1em 0;
+    padding: .5rem 0;
     text-align: center;
 }
 
-.footer {
-    display: relative;
+footer p {
+    margin-top: 1rem;
 }
+
 
 /* MODAL STYLES  */
 
