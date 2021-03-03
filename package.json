@@ -10,7 +10,7 @@
     "express": "^4.15.4",
     "express-session": "^1.15.5",
     "mongoose": "^5.7.5",
-    "pug": "^2.0.0-rc.3"
+    "pug": "^3.0.1"
   },
   "devDependencies": {
     "mocha": "^3.5.0"
